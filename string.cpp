@@ -152,12 +152,3 @@ struct Z{
         z[0]=_n;
     }
 };
-/*
-    SA(int _n,const string& s)
-    传入后，产出后缀数组sa[k]是下标排名第k小的后缀起始下标
-    LCP(int _n,const str& s,const vector<int>& sa)
-    产出相邻公共前缀数组，长度n-1，lcp[k]就是排名k与排名k+1那两个后缀的最长公共前缀长度
-    Z(int _n,const str& s)
-    z[i]是从i~n-1那个字符串与整个长度为n字符串的字符串的最长公共前缀长度，z[0]强制为n
-    sa,z数组都是n项，lcp是n-1项
-*/
