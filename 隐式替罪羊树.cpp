@@ -100,13 +100,3 @@ private:
 		collect(tr[v].rc,res);
 	}
 };
-/*
-tr.insert(p,x);		//在位置 p 插入 x(p 从 0 数,可以等于当前长度即尾插)
-tr.get(p);		//取第 p 个元素
-tr.size();		//当前元素个数
-tr.to_vector();		//返回整个序列(vector),一般最后输出用
-tr.set(p,x);		//改第 p 个元素
-tr.prod(l,r);		//聚合 [l,r),用的是你的 op/e。如 tr.prod(0,3) 求和
-tr.all_prod();		//整个序列的聚合
-tr.empty();		//是否为空
-*/
