@@ -1,0 +1,72 @@
+template<class L,
+		 class X,
+		 class V,
+		 auto&& F,
+		 bool minn=true
+>struct LiChao{
+	vector<L>tree;
+	vector<char>has;
+	int n;
+	LiChao():LiChao(0){}
+	LiChao(int _n):n(_n){
+		tree.assign(4*n,L());
+		has.assign(4*n,0);
+	}
+	LiChao(const vector<L>&t):LiChao(sz(t)){
+		for(int i=0;i<n;i++)Add(t[i],i,i+1);
+	}
+	// 直线 a 在 x 处是否比直线 b 更优
+	bool Better(const L&a,const L&b,X x){
+		if constexpr(minn)return F(a,x)<F(b,x);
+		else return F(a,x)>F(b,x);
+	}
+	// 把直线 nw 插入节点 p 的整段区间 [l,r]
+	void Insert(L nw,int p,int l,int r){
+		if(!has[p]){tree[p]=nw;has[p]=1;return;}
+		int mid=(l+r)/2;
+		if(Better(nw,tree[p],mid))swap(nw,tree[p]);
+		if(l==r)return;
+		if(Better(nw,tree[p],l))Insert(nw,p<<1,l,mid);
+		else Insert(nw,p<<1|1,mid+1,r);
+	}
+	// 把直线 nw 只插入半开区间 [ql,qr)，其余下标不生效
+	void Insert(L nw,int p,int l,int r,int ql,int qr){
+		if(r<ql||l>=qr)return;
+		if(ql<=l&&qr>r){Insert(nw,p,l,r);return;}
+		int mid=(l+r)/2;
+		Insert(nw,p<<1,l,mid,ql,qr);
+		Insert(nw,p<<1|1,mid+1,r,ql,qr);
+	}
+	void Add(L nw){if(n)Insert(nw,1,0,n-1);}
+	void Add(L nw,int l,int r){if(n&&l<r)Insert(nw,1,0,n-1,l,r);}
+	void Get(int p,int l,int r,int x,V&res,bool&fst){
+		if(has[p]){
+			V v=F(tree[p],(X)x);
+			if(fst){res=v;fst=false;}
+			else if constexpr(minn)res=min(res,v);
+			else res=max(res,v);
+		}
+		if(l==r)return;
+		int mid=(l+r)/2;
+		if(x<=mid)Get(p<<1,l,mid,x,res,fst);
+		else Get(p<<1|1,mid+1,r,x,res,fst);
+	}
+	V Get(int pos){
+		V res{};
+		bool fst=true;
+		Get(1,0,n-1,pos,res,fst);
+		return res;
+	}
+};
+/*
+    可用前提：两条直线最多只能有一个交点
+    LiChao()构造大小为0
+    LiChao(n)构造可以处理下标[0,n-1]的李超树
+    LiChao(向量数组)中第i条直线只在x=i处生效
+    Add(L nw)将直线nw插入整个定义域
+    Add(L nw,l,r)将直线nw只插入区间[l,r)
+    Get(pos)取pos处所有生效直线的最优值
+    minn=true求最小，minn=false求最大
+    本模板只支持单点查询
+    模板的参数分别是 线类型，点类型，值类型，计算操作
+*/
