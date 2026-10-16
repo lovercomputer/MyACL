@@ -105,13 +105,3 @@ long long floor_sum(long long n,long long m,long long a,long long b){//列欧几
   }
   return ans+internal::floor_sum_unsigned((unsigned long long)n,(unsigned long long)m,(unsigned long long)a,(unsigned long long)b);
 }
-/*
-    floor_sum(long long n,long long m,long long a,long long b)返回地板和
-    floor_sum_unsigned()返回无符号地板和
-    crt(const std::vector<long long>& r,const std::vector<long long>& m)剩余中国定理
-    pow_mod(ll a,ll b,ll m)返回在a为底数，b为指数在m下的(int)模
-    inv_mod(ll a,ll m)返回a在m下的逆元
-    extgcd(ll a,ll b,ll& x,ll& y)返回gcd(a,b),x是逆元，y是副产物
-    crt(const vector<long long>& r,const vector<long long>& m)r[i]是余数，m[i]是对应模数
-    返回{r0,m0},表示x≡r0(mod m0),无解返回{0,0};中国剩余定理
-*/
