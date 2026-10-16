@@ -85,16 +85,3 @@ template<class S,
         return Find_Left(p<<1|1,mid+1,r,qr,f,sm);
     }
 };
-/*
-    SegTree()构造大小为0的线段树
-    SegTree(n)构造可以处理长度为n的数组的线段树
-    SegTree(向量数组)直接处理数组
-    Get(pos)取线段树第pos个
-    Prod(l,r)取区间[l,r]
-    All_Prod()取区间[0,n-1]
-    Set(pos,S x)将pos设为x
-    template<f>Max_Right(l)从左往右找第一个不满足f函数的r,在函数内部是[l,res),res是第一个不满足的，同时
-    也是下个区间的开始位置
-    template<f>Min_Left(r)从右往左找第一个不满足f函数的l，函数内部是[res,r),若要包含r,则传入r+1
-	使用Max_Right(int l)的是，要将f放全局，若要让f判断基准可变，在全局设个全局变量即可，详情见模板题
-*/
