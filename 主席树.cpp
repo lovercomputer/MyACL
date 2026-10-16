@@ -73,10 +73,3 @@ struct Persistent_Seg{
         return val[u];
     }
 };
-/*
-Persistent_Seg(vec<S>&,m=0)初始化传进来的数字，预留m次update次数
-update(ver,pos,x)将版本ver的第pos个位置更新成x,返回生成的版本号
-copy(ver)生成一个版本为ver的数,返回生成的版本号
-prod(ver,ql,qr)查询版本ver里[ql,qr),返回值
-get(ver,pos)查询版本ver的第pos个位置的值,返回值
-*/
