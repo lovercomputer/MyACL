@@ -58,15 +58,3 @@ template<class L,
 		return res;
 	}
 };
-/*
-    可用前提：两条直线最多只能有一个交点
-    LiChao()构造大小为0
-    LiChao(n)构造可以处理下标[0,n-1]的李超树
-    LiChao(向量数组)中第i条直线只在x=i处生效
-    Add(L nw)将直线nw插入整个定义域
-    Add(L nw,l,r)将直线nw只插入区间[l,r)
-    Get(pos)取pos处所有生效直线的最优值
-    minn=true求最小，minn=false求最大
-    本模板只支持单点查询
-    模板的参数分别是 线类型，点类型，值类型，计算操作
-*/
