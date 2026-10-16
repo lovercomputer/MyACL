@@ -39,10 +39,3 @@ struct MinCostFlow{//最小费用最大流，SPFA找增广路，0-indexed
         return {fl,cost};
     }
 };
-/*
-    时间复杂度是K*N^4
-    MinCostFlow(int _n)构造0~_n-1的顶点
-    Add(u,v,cap,cost)构造u→v的边，容量，花费:即送一单位的水进入这个管道需要支付cost
-    flow(s,t,limit)计算s到t的最小花费，其中limit为流的限制
-    最终就是花最少的钱把水送到我要的量
-*/
