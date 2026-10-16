@@ -272,12 +272,3 @@ struct convolution{
         return c;
     }
 };
-/*
-C::conv(vector<mint>, vector<mint>)   // mint 版
-C::conv(vector<T>, vector<T>)         // 整型版，输出已对 mod 取模
-C::conv_ll(vector<ll>, vector<ll>)    // 精确 long long 版
-用法例：
-vector<C::mint> a = {1,2,3}, b = {4,5};
-auto c = C::conv(a, b);     // c = {4,13,22,15}
-计算的是(1+2*x+3*x^2)(4+5*x)的每项系数
-*/
