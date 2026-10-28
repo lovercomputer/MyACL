@@ -16,6 +16,7 @@ using ll=long long;
 using ull=unsigned long long;
 using i128=__int128;
 using ui128=unsigned __int128;
+const int infi=0x3f3f3f3f;
 const ll inf=1e17;
 const ll infLL=4e18;
 const ll mod=1e9+7;
