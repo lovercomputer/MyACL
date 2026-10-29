@@ -20,6 +20,8 @@ const int infi=0x3f3f3f3f;
 const ll inf=1e17;
 const ll infLL=4e18;
 const ll mod=1e9+7;
+template<class T,class U>bool chmax(T& a,const U& b){if(a<b){a=b;return 1;}return 0;}
+template<class T,class U>bool chmin(T& a,const U& b){if(a>b){a=b;return 1;}return 0;}
 #ifdef LOCAL
 #pragma message("LOCAL ON")
 #ifdef DBG_USE_COLOR
