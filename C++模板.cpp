@@ -12,6 +12,7 @@ using namespace std;
 #define En "\n"
 #define yes "Yes"
 #define no "No"
+#define pb push_back
 using ll=long long;
 using ull=unsigned long long;
 using i128=__int128;
