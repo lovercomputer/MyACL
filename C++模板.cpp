@@ -5,6 +5,7 @@
 //
 #include<bits/stdc++.h>
 using namespace std;
+#define rgs ranges
 #define all(x) (x).begin(), (x).end()
 #define sz(x) (int)(x).size()
 #define se " "
