@@ -7,6 +7,7 @@
 using namespace std;
 #define rgs ranges
 #define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(),(x).rend()
 #define sz(x) (int)(x).size()
 #define se " "
 #define en "\n"
