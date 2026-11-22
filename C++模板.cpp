@@ -9,6 +9,7 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 #define rall(x) (x).rbegin(),(x).rend()
 #define sz(x) (int)(x).size()
+#define vec vector
 #define se " "
 #define en "\n"
 #define En "\n"
